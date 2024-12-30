@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>reView - Sports video playback</title>
+
+  </head>
+  <body>
+    <canvas  id="capture_canvas" style="display: none;"></canvas>
+    <div id="bg-slash1"></div><div id="bg-slash2"></div><div id="bg-slash3"></div>
+
+    <div class="topbar" id="topbar"> 
+      <div class="material-symbols-rounded" id="settings">settings</div> 
+    </div>
+    <div id="log"></div>
+
+    <div class="content" id="content">
+
+      <div class="screen" id="settings-screen" style="display: none;">
+
+        <div class="container">
+          Capture Length <input id=cpLen type=number value=15 min=0 max=60 step=0.1> seconds &nbsp;&nbsp;
+        </div>
+
+      </div>
+
+      <div class="screen" id="main-screen">        
+        <div class="container" id="container">
+
+          <video id=video style="display: none;"></video>
+          <canvas  id="render_canvas" style="display: none;"></canvas>
+    
+          <div class="select">
+            <label for="videoSource"></label><select id="videoSource"></select>
+          </div>
+
+          <br/>
+    
+          <div id="video-container">
+            <div id="canvas-container" class=overlay>
+              <canvas class="overlay_bottom video_canvas" id=canvas_live></canvas>
+      
+              <div id="fullscreenContainer" class="fullscreenContainer overlay_top video_canvas">
+                <canvas class="" id=canvas_delay></canvas>
+                <div class="fullscreen_overlay" id="fullscreen-overlay">
+                  <div class="material-symbols-rounded" id="close-fullscreen">close</div>
+                </div>
+              </div> 
+            </div>
+      
+            <div id="video-options">
+              <div style="padding-right: 5px;">Delay</div> <input id=delay type=number value=1 min=0 max=60 step=0.1> &nbsp;&nbsp;
+              <div style="padding-right: 5px;">Mirror</div>
+              <div class="checkbox-wrapper-22">
+                <label class="switch" for="mirror">
+                  <input type="checkbox" id="mirror" />
+                  <div class="slider round"></div>
+                </label>
+              </div>
+              <div style="padding-right: 5px; padding-left: 20px;">Show Live</div>
+              <div class="checkbox-wrapper-22">
+                <label class="switch" for="live-video">
+                  <input type="checkbox" id="live-video" />
+                  <div class="slider round"></div>
+                </label>
+              </div>
+            </div>
+          </div>
+    
+          <div class="controls">
+            <button id="capture">Capture</button>
+            <button id="fullscreenBtn">Fullscreen</button>
+          </div>
+    
+        </div>
+  
+      </div>
+
+    </div> 
+  
+
+  </body>
+</html>
