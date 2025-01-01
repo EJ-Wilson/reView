@@ -23,7 +23,7 @@ let targetWidthRatio = 0.45;
 let shouldRestart = false;
 
 //Start video stream
-getStream().then(getDevices).then(gotDevices);
+getDevices().then(gotDevices).then(getStream);
 //baseWidth = canvas_live.clientWidth;
 
 //Detect mouse move
